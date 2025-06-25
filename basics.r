@@ -60,6 +60,7 @@ students_data
 # Acessing data frame elements
 students_data$Name
 students_data[,"Age"]
+students_data[1, ]
 
 # Print function
 my_variable <- "This is a message"
