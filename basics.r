@@ -122,3 +122,51 @@ add_numbers <- function(a,b) {
 }
 sum_result <- add_numbers(5,7)
 print(sum_result)
+
+# Summary()
+summary(iris$Species) # For categorical variables
+summary(iris$Sepal.Length) # For Numerical variables
+summary(iris) # For the entire data
+
+# For quantitative variables describe function()
+describe(iris$Sepal.Length)
+describe(iris) # For entire data
+
+# Selectors
+
+# 1. Selector for categrical variables
+hist(iris$Petal.Length[iris$Species == "setosa"],
+     main = "Petal Length : setosa")
+
+# Select by value
+hist(iris$Petal.Length[iris$Petal.Length < 2],
+     main = "Shorter Petal Length")
+
+# Multiple selectors
+hist(iris$Petal.Length[iris$Species == "virginica" &
+     iris$Petal.Length < 5.3],
+     main = "Petal Length : Shoter virginica")
+
+# Creating the subsample 
+i.setosa <- iris[iris$Species == "setosa",]
+
+# Explore the created subsample
+head(i.setosa)
+summary(i.setosa$Petal.Length)
+hist(i.setosa$Petal.Length)
+
+# Factors
+
+(x1 <- 1:3)
+(y1 <- 1:9)
+
+# Combine the variable
+(df1 <- cbind.data.frame(x1,y1))
+typeof(df1$x1)
+str(df1)
+
+(x2 <- as.factor(c(1:3)))
+(df2 <- cbind.data.frame(x2,y1))
+typeof(df2$x2)
+str(df2)
+
